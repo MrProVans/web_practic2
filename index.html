@@ -4,16 +4,219 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="DevStars Web App - погода, фильмы, валюты" />
-    <title>DevStars Web App</title>
+    <meta name="description" content="DevStars Web App - инновационные веб-виджеты: погода, фильмы, конвертер валют" />
+    <meta name="keywords" content="погода, фильмы, валюты, конвертер, API, JavaScript, Vite" />
+    <meta name="author" content="Команда DevStars" />
+
+    <!-- Open Graph метатеги для соцсетей -->
+    <meta property="og:title" content="DevStars Web App" />
+    <meta property="og:description" content="Инновационные веб-виджеты: погода, фильмы, конвертер валют" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mrprovans.github.io/web_practic2" />
+
+    <title>DevStars Web App | Погода, Фильмы, Валюты</title>
+
+    <!-- Предзагрузка критичных ресурсов -->
+    <link rel="preload" as="style" href="/src/style.css" />
+    <link rel="preload" as="script" href="/src/main.js" />
+
+    <!-- Темная тема для браузера -->
+    <meta name="color-scheme" content="light dark">
+
+    <!-- PWA манифест (опционально) -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Канонический URL -->
+    <link rel="canonical" href="https://mrprovans.github.io/web_practic2" />
+
+    <style>
+        /* Критический CSS для мгновенной отрисовки */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Стили для загрузочного экрана */
+        #app {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e1e8ed;
+            border-left: 4px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        .loading p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Темная тема для системных предпочтений */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1a1a;
+                color: #ecf0f1;
+            }
+
+            .loading {
+                background: #1a1a1a;
+            }
+
+            .spinner {
+                border-color: #34495e;
+                border-left-color: #3498db;
+            }
+
+            .loading p {
+                color: #bdc3c7;
+            }
+        }
+
+        /* Улучшение доступности для пользователей с reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .spinner {
+                animation: none;
+                border-left-color: #e1e8ed;
+            }
+
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Базовые стили для контента, который появится после загрузки JS */
+        .main-content {
+            flex: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .main-content.loaded {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
 <div id="app">
+    <!-- Экран загрузки, который исчезнет после инициализации JS -->
     <div class="loading" id="loading">
-        <div class="spinner"></div>
-        <p>Загрузка...</p>
+        <div class="spinner" aria-hidden="true"></div>
+        <p>Загрузка DevStars App...</p>
+        <noscript>
+            <p style="color: #e74c3c; margin-top: 1rem;">
+                ⚠️ Для работы приложения требуется JavaScript. Пожалуйста, включите его в настройках браузера.
+            </p>
+        </noscript>
     </div>
+
+    <!-- Сюда будет вставлено всё приложение через JavaScript -->
+    <!-- Header, Main, Footer появятся после загрузки main.js -->
 </div>
+
+<!-- Скрипты -->
 <script type="module" src="/src/main.js"></script>
+
+<!-- Резервный скрипт для случаев, если модули не поддерживаются -->
+<script>
+    // Проверка поддержки модулей ES6
+    if (!('noModule' in HTMLScriptElement.prototype)) {
+        document.getElementById('loading').innerHTML = `
+                <div style="text-align: center; padding: 2rem;">
+                    <h2 style="color: #e74c3c; margin-bottom: 1rem;">⚠️ Браузер не поддерживается</h2>
+                    <p>Ваш браузер устарел и не поддерживает современные технологии.</p>
+                    <p>Пожалуйста, обновите браузер или используйте современный браузер:</p>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://www.google.com/chrome/" style="color: #3498db; margin: 0 0.5rem;">Chrome</a>
+                        <a href="https://www.mozilla.org/firefox/" style="color: #3498db; margin: 0 0.5rem;">Firefox</a>
+                        <a href="https://www.microsoft.com/edge" style="color: #3498db; margin: 0 0.5rem;">Edge</a>
+                    </div>
+                </div>
+            `;
+    }
+
+    // Резервная обработка ошибок загрузки
+    window.addEventListener('error', function(e) {
+        console.error('Ошибка загрузки приложения:', e.error);
+        const loading = document.getElementById('loading');
+        if (loading) {
+            loading.innerHTML = `
+                    <div style="text-align: center; padding: 2rem;">
+                        <h2 style="color: #e74c3c; margin-bottom: 1rem;">😕 Произошла ошибка</h2>
+                        <p>Не удалось загрузить приложение. Пожалуйста, попробуйте обновить страницу.</p>
+                        <button onclick="window.location.reload()" style="
+                            background: #3498db;
+                            color: white;
+                            border: none;
+                            padding: 0.75rem 1.5rem;
+                            border-radius: 6px;
+                            cursor: pointer;
+                            margin-top: 1rem;
+                        ">Обновить страницу</button>
+                    </div>
+                `;
+        }
+    });
+
+    // Таймаут загрузки (на всякий случай)
+    setTimeout(() => {
+        const loading = document.getElementById('loading');
+        const mainContent = document.querySelector('.main-content');
+        if (loading && loading.style.display !== 'none' && !mainContent) {
+            console.warn('Приложение долго загружается...');
+        }
+    }, 10000);
+</script>
+
+<!-- Google Analytics / Yandex.Metrika (опционально) -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+-->
 </body>
 </html>
