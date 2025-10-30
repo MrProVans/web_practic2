@@ -4,9 +4,13 @@ import './style.css'
 import Header from './components/Header.js'
 import Footer from './components/Footer.js'
 import Home from './pages/home/Home.js'
-import Weather from './pages/Vanya/Vanya.js'
-import Movies from './pages/Victor/Victor.js'
-import Currency from './pages/Dmitriy/Dmitriy.js'
+
+// Попробуем подключить остальные страницы безопасно
+let Weather, Movies, Currency
+
+try { Weather = (await import('./pages/Vanya/Vanya.js')).default } catch (e) { Weather = null }
+try { Movies = (await import('./pages/Victor/Victor.js')).default } catch (e) { Movies = null }
+try { Currency = (await import('./pages/Dmitriy/Dmitriy.js')).default } catch (e) { Currency = null }
 
 class App {
     constructor() {
@@ -30,52 +34,69 @@ class App {
 
     hideLoading() {
         const loading = document.getElementById('loading')
-        if (loading) {
-            loading.style.display = 'none'
-        }
+        if (loading) loading.style.display = 'none'
     }
 
     render() {
         this.app.innerHTML = `
-      ${Header()}
-      <main class="main-content">
-        <div id="page-content"></div>
-      </main>
-      ${Footer()}
-    `
-
+            ${Header()}
+            <main class="main-content loaded">
+                <div id="page-content"></div>
+            </main>
+            ${Footer()}
+        `
         this.renderPage('home')
     }
 
     renderPage(pageName) {
         const pageContent = document.getElementById('page-content')
-        if (this.pages[pageName]) {
-            pageContent.innerHTML = this.pages[pageName]()
+
+        // Проверяем, существует ли страница
+        const pageModule = this.pages[pageName]
+
+        if (pageModule && typeof pageModule === 'function') {
+            pageContent.innerHTML = pageModule()
             this.currentPage = pageName
             this.updateActiveNav()
             this.attachPageEvents(pageName)
+        } else {
+            // Если страница не реализована — сообщение
+            pageContent.innerHTML = `
+                <div style="text-align:center; padding:4rem 1rem;">
+                    <h2 style="font-size:2rem; color:#e74c3c;">😕 Упс!</h2>
+                    <p style="margin-top:1rem; font-size:1.2rem;">
+                        Страница "<strong>${pageName}</strong>" пока не работает.
+                    </p>
+                    <button id="backHome" style="
+                        margin-top:2rem;
+                        padding:0.75rem 1.5rem;
+                        background:#3498db;
+                        color:white;
+                        border:none;
+                        border-radius:6px;
+                        cursor:pointer;
+                    ">Вернуться на главную</button>
+                </div>
+            `
+            document.getElementById('backHome')?.addEventListener('click', () => this.renderPage('home'))
         }
     }
 
     updateActiveNav() {
-        // Убираем активный класс у всех ссылок
         document.querySelectorAll('.nav-link').forEach(link => {
             link.classList.remove('active')
         })
-
-        // Добавляем активный класс текущей странице
         const currentLink = document.querySelector(`[data-page="${this.currentPage}"]`)
-        if (currentLink) {
-            currentLink.classList.add('active')
-        }
+        if (currentLink) currentLink.classList.add('active')
     }
 
     setupNavigation() {
         document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('nav-link')) {
+            const target = e.target.closest('.nav-link, [data-page]')
+            if (target) {
                 e.preventDefault()
-                const page = e.target.getAttribute('data-page')
-                if (page && this.pages[page]) {
+                const page = target.getAttribute('data-page')
+                if (page) {
                     this.renderPage(page)
                     window.scrollTo(0, 0)
                 }
@@ -84,20 +105,9 @@ class App {
     }
 
     attachPageEvents(pageName) {
-        // Здесь будут привязываться события для конкретных страниц
-        switch(pageName) {
-            case 'weather':
-                if (typeof Weather.init === 'function') Weather.init()
-                break
-            case 'movies':
-                if (typeof Movies.init === 'function') Movies.init()
-                break
-            case 'currency':
-                if (typeof Currency.init === 'function') Currency.init()
-                break
-            case 'home':
-                if (typeof Home.init === 'function') Home.init()
-                break
+        const pageModule = this.pages[pageName]
+        if (pageModule && typeof pageModule.init === 'function') {
+            pageModule.init()
         }
     }
 }
