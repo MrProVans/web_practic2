@@ -335,15 +335,36 @@
     }
 }
 
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-        --primary-color: #5dade2;
-        --secondary-color: #34495e;
-        --success-color: #27ae60;
-        --text-color: #ecf0f1;
-        --text-light: #bdc3c7;
-        --background-color: #1a1a1a;
-        --surface-color: #2d3436;
-        --border-color: #34495e;
-    }
+.floating-card {
+    display: inline-block;
+    width: 360px;
+    margin: 1rem;
+    vertical-align: top;
+    animation: wave-float 2.4s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes wave-float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-15px); }
+}
+
+.floating-card.weather-card   { animation-delay: 0s; }
+.floating-card.movies-card    { animation-delay: 0.3s; }
+.floating-card.currency-card  { animation-delay: 0.6s; }
+.floating-card:hover {
+    animation: bounce-card 0.6s ease;
+    box-shadow: var(--shadow-hover);
+    z-index: 10;
+}
+
+@keyframes bounce-card {
+    0%, 100% { transform: translateY(0); }
+    40%      { transform: translateY(-35px); }
+    60%      { transform: translateY(-20px); }
+    80%      { transform: translateY(-10px); }
+}
+
+.floating-card:hover {
+    transform: none !important;
 }
