@@ -15,8 +15,8 @@ const Footer = () => {
           </div>
           <div class="footer-section">
             <h4>Команда</h4>
-            <span>Ваня - Погода</span>
-            <span>Витя - Фильмы</span>
+            <span>Ваня - Погода</span><br>
+            <span>Витя - Фильмы</span><br>
             <span>Дима - Валюты</span>
           </div>
         </div>

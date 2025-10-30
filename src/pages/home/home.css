@@ -1,8 +1,47 @@
+/* === ПЕРЕМЕННЫЕ === */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --success-color: #2ecc71;
+    --text-color: #2c3e50;
+    --text-light: #7f8c8d;
+    --background-color: #f8f9fa;
+    --surface-color: #ffffff;
+    --border-color: #e1e8ed;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+    --border-radius: 12px;
+}
+
+[data-theme="dark"] {
+    --primary-color: #5dade2;
+    --secondary-color: #34495e;
+    --success-color: #27ae60;
+    --text-color: #ecf0f1;
+    --text-light: #bdc3c7;
+    --background-color: #1a1a1a;
+    --surface-color: #2d3436;
+    --border-color: #34495e;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* === ОБЩИЕ СТИЛИ === */
+.home-page,
+.features-section,
+.team-section,
+.stats-section {
+    background: var(--background-color);
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* === HERO SECTION === */
 .home-page {
     min-height: 100vh;
 }
 
-/* Hero Section */
 .hero-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -36,75 +75,64 @@
     flex-wrap: wrap;
 }
 
-.hero-image {
-    position: relative;
-    height: 400px;
-}
-
+/* === КАРТОЧКИ СПРАВА (в hero-image) === */
 .floating-cards {
-    position: relative;
-    height: 100%;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
 }
 
 .floating-card {
-    position: absolute;
-    background: var(--surface-color);
-    padding: 1.5rem;
+    background: var(--primary-color);
+    color: white;
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow-hover);
+    padding: 1.5rem;
+    width: 360px;
+    min-height: 140px;
+    box-shadow: var(--shadow);
     border: 1px solid var(--border-color);
-    min-width: 160px;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
 }
 
-/*.floating-card:hover {*/
-/*    transform: translateY(-5px) scale(1.05);*/
-/*    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);*/
-/*}*/
-
-.weather-card {
-    top: 10%;
-    left: 10%;
-    animation: float 3s ease-in-out infinite;
+.floating-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
 }
 
-.movies-card {
-    top: 50%;
-    right: 10%;
-    animation: float 3s ease-in-out infinite 0.5s;
+/* ВСЁ ВНУТРИ КАРТОЧКИ — БЕЛОЕ */
+.floating-card .card-icon,
+.floating-card h4,
+.floating-card p {
+    color: white !important;
+    margin: 0;
 }
 
-.currency-card {
-    bottom: 10%;
-    left: 30%;
-    animation: float 3s ease-in-out infinite 1s;
-}
-
-.card-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+.floating-card .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .floating-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--text-color);
 }
 
 .floating-card p {
-    color: var(--text-light);
     font-size: 0.9rem;
+    opacity: 0.95;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-/* Features Section */
+/* === FEATURES SECTION === */
 .features-section {
     padding: 5rem 0;
-    background: var(--border-radius);
-    margin: 2rem 0;
-    border-radius: var(--border-radius);
 }
 
 .section-title {
@@ -121,7 +149,7 @@
 }
 
 .feature-card {
-    background: var(--background-color);
+    background: var(--surface-color);
     padding: 2.5rem 2rem;
     border-radius: var(--border-radius);
     text-align: center;
@@ -139,6 +167,7 @@
 .feature-icon {
     font-size: 3rem;
     margin-bottom: 1.5rem;
+    color: var(--primary-color);
 }
 
 .feature-card h3 {
@@ -156,6 +185,8 @@
 .feature-list {
     list-style: none;
     text-align: left;
+    padding: 0;
+    margin: 0;
 }
 
 .feature-list li {
@@ -173,7 +204,7 @@
     font-weight: bold;
 }
 
-/* Team Section */
+/* === TEAM SECTION === */
 .team-section {
     padding: 5rem 0;
 }
@@ -227,7 +258,7 @@
     line-height: 1.6;
 }
 
-/* Stats Section */
+/* === STATS SECTION === */
 .stats-section {
     padding: 4rem 0;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -257,63 +288,43 @@
     opacity: 0.9;
 }
 
-/* Responsive Design */
+/* === АДАПТИВНОСТЬ === */
 @media (max-width: 968px) {
     .hero-section {
         grid-template-columns: 1fr;
         text-align: center;
         padding: 2rem 0;
     }
-
     .hero-title {
         font-size: 2.5rem;
     }
-
     .hero-subtitle {
         font-size: 1.1rem;
     }
-
     .hero-actions {
         justify-content: center;
     }
-
-    .hero-image {
-        height: 300px;
-        order: -1;
+    .floating-cards {
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    .floating-card {
+        width: 280px;
     }
 }
 
 @media (max-width: 768px) {
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .feature-card {
-        padding: 2rem 1.5rem;
-    }
-
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
-
+    .features-grid,
+    .team-grid,
     .stats-grid {
         grid-template-columns: 1fr;
     }
-
-    .floating-card {
-        position: relative;
-        margin-bottom: 1rem;
-        animation: none;
+    .feature-card {
+        padding: 2rem 1.5rem;
     }
-
-    .weather-card,
-    .movies-card,
-    .currency-card {
-        position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
+    .floating-card {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
@@ -321,18 +332,29 @@
     .hero-title {
         font-size: 2rem;
     }
-
     .hero-actions {
         flex-direction: column;
         align-items: center;
     }
-
     .hero-actions .btn {
         width: 100%;
         max-width: 250px;
     }
-
     .section-title {
         font-size: 2rem;
+    }
+}
+
+/* === ТЁМНАЯ ТЕМА ПО УМОЛЧАНИЮ === */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --primary-color: #5dade2;
+        --secondary-color: #34495e;
+        --success-color: #27ae60;
+        --text-color: #ecf0f1;
+        --text-light: #bdc3c7;
+        --background-color: #1a1a1a;
+        --surface-color: #2d3436;
+        --border-color: #34495e;
     }
 }

@@ -114,3 +114,27 @@ class App {
 
 // Инициализация приложения
 new App()
+
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+
+// Загружаем сохранённую тему
+const saved = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', saved);
+updateIcon(saved);
+
+// Переключение темы
+themeToggle.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    updateIcon(next);
+});
+
+// Обновление иконки
+function updateIcon(theme) {
+    const icon = themeToggle.querySelector('.icon');
+    if (icon) {
+        icon.textContent = theme === 'dark' ? 'Солнце' : 'Луна';
+    }
+}

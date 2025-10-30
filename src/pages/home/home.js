@@ -11,30 +11,30 @@ const Home = () => {
             <p class="hero-subtitle">Инновационные веб-виджеты для повседневного использования</p>
             <div class="hero-actions">
               <button class="btn btn-outline" data-page="weather">
-                🌤️ Узнать погоду
+                Узнать погоду
               </button>
               <button class="btn btn-outline" data-page="movies">
-                🎬 Найти фильм
+                Найти фильм
               </button>
               <button class="btn btn-outline" data-page="currency">
-                💱 Проверить курс валют
+                Проверить курс валют
               </button>
             </div>
           </div>
           <div class="hero-image">
             <div class="floating-cards">
               <div class="floating-card weather-card">
-                <div class="card-icon">🌤️</div>
+                <div class="card-icon">Погода</div>
                 <h4>Погода</h4>
                 <p>Актуальный прогноз</p>
               </div>
               <div class="floating-card movies-card">
-                <div class="card-icon">🎬</div>
+                <div class="card-icon">Фильмы</div>
                 <h4>Фильмы</h4>
                 <p>База данных кино</p>
               </div>
               <div class="floating-card currency-card">
-                <div class="card-icon">💱</div>
+                <div class="card-icon">Валюты</div>
                 <h4>Валюты</h4>
                 <p>Конвертер курсов</p>
               </div>
@@ -47,20 +47,17 @@ const Home = () => {
           <h2 class="section-title">Наши возможности</h2>
           <div class="features-grid">
             <div class="feature-card" data-page="weather">
-              <div class="feature-icon">🌤️</div>
+              <div class="feature-icon">Погода</div>
               <h3>Виджет погоды</h3>
-<!--              <p>Текущая погода и точный прогноз на 5 дней для любого города мира</p>-->
               <p>Текущая погода, скорость ветра, влажность и температура для любого города мира</p>
               <ul class="feature-list">
                 <li>Поиск по городу</li>
-<!--                <li>Геолокация</li>-->
                 <li>Детальная информация</li>
-<!--                <li>Прогноз на неделю</li>-->
               </ul>
             </div>
 
             <div class="feature-card" data-page="movies">
-              <div class="feature-icon">🎬</div>
+              <div class="feature-icon">Фильмы</div>
               <h3>Библиотека фильмов</h3>
               <p>Обширная база фильмов с поиском, рейтингами и детальной информацией</p>
               <ul class="feature-list">
@@ -72,7 +69,7 @@ const Home = () => {
             </div>
 
             <div class="feature-card" data-page="currency">
-              <div class="feature-icon">💱</div>
+              <div class="feature-icon">Валюты</div>
               <h3>Конвертер валют</h3>
               <p>Актуальные курсы валют с конвертацией и историческими данными</p>
               <ul class="feature-list">
@@ -136,15 +133,13 @@ const Home = () => {
 
 // Инициализация событий для домашней страницы
 Home.init = () => {
-    // Добавляем обработчики для карточек-ссылок
     document.addEventListener('click', (e) => {
         const card = e.target.closest('.feature-card, .floating-card')
         if (card) {
             const page = card.closest('[data-page]')?.getAttribute('data-page')
             if (page) {
-                // Эмулируем клик по навигационной ссылке
                 const navEvent = new Event('click', { bubbles: true })
-                const navLink = document.querySelector(`[data-page="${page}"]`)
+                const navLink = document.querySelector(`.nav-link[data-page="${page}"]`)
                 if (navLink) {
                     navLink.dispatchEvent(navEvent)
                 }
