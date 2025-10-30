@@ -8,7 +8,7 @@ import Home from './pages/home/Home.js'
 // Попробуем подключить остальные страницы безопасно
 let Weather, Movies, Currency
 
-try { Weather = (await import('./pages/Vanya/Vanya.js')).default } catch (e) { Weather = null }
+try { Weather = (await import('./pages/Vanya/weather.js')).default } catch (e) { Weather = null }
 try { Movies = (await import('./pages/Victor/Victor.js')).default } catch (e) { Movies = null }
 try { Currency = (await import('./pages/Dmitriy/Dmitriy.js')).default } catch (e) { Currency = null }
 
@@ -51,7 +51,6 @@ class App {
     renderPage(pageName) {
         const pageContent = document.getElementById('page-content')
 
-        // Проверяем, существует ли страница
         const pageModule = this.pages[pageName]
 
         if (pageModule && typeof pageModule === 'function') {
@@ -60,7 +59,6 @@ class App {
             this.updateActiveNav()
             this.attachPageEvents(pageName)
         } else {
-            // Если страница не реализована — сообщение
             pageContent.innerHTML = `
                 <div style="text-align:center; padding:4rem 1rem;">
                     <h2 style="font-size:2rem; color:#e74c3c;">😕 Упс!</h2>

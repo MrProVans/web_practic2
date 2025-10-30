@@ -7,8 +7,6 @@
     <meta name="description" content="DevStars Web App - инновационные веб-виджеты: погода, фильмы, конвертер валют" />
     <meta name="keywords" content="погода, фильмы, валюты, конвертер, API, JavaScript, Vite" />
     <meta name="author" content="Команда DevStars" />
-
-    <!-- Open Graph метатеги для соцсетей -->
     <meta property="og:title" content="DevStars Web App" />
     <meta property="og:description" content="Инновационные веб-виджеты: погода, фильмы, конвертер валют" />
     <meta property="og:type" content="website" />
@@ -16,24 +14,18 @@
 
     <title>DevStars Web App | Погода, Фильмы, Валюты</title>
 
-    <!-- Предзагрузка критичных ресурсов -->
     <link rel="preload" as="style" href="/src/style.css" />
     <link rel="preload" as="script" href="/src/main.js" />
 
-    <!-- Темная тема для браузера -->
     <meta name="color-scheme" content="light dark">
 
-    <!-- PWA манифест (опционально) -->
     <link rel="manifest" href="/manifest.json" />
 
-    <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <!-- Канонический URL -->
     <link rel="canonical" href="https://mrprovans.github.io/web_practic2" />
 
     <style>
-        /* Критический CSS для мгновенной отрисовки */
         * {
             margin: 0;
             padding: 0;
@@ -48,7 +40,6 @@
             min-height: 100vh;
         }
 
-        /* Стили для загрузочного экрана */
         #app {
             min-height: 100vh;
             display: flex;
@@ -90,7 +81,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Темная тема для системных предпочтений */
         @media (prefers-color-scheme: dark) {
             body {
                 background-color: #1a1a1a;
@@ -111,7 +101,6 @@
             }
         }
 
-        /* Улучшение доступности для пользователей с reduced motion */
         @media (prefers-reduced-motion: reduce) {
             .spinner {
                 animation: none;
@@ -125,7 +114,6 @@
             }
         }
 
-        /* Базовые стили для контента, который появится после загрузки JS */
         .main-content {
             flex: 1;
             opacity: 0;
@@ -139,7 +127,6 @@
 </head>
 <body>
 <div id="app">
-    <!-- Экран загрузки, который исчезнет после инициализации JS -->
     <div class="loading" id="loading">
         <div class="spinner" aria-hidden="true"></div>
         <p>Загрузка DevStars App...</p>
@@ -149,15 +136,8 @@
             </p>
         </noscript>
     </div>
-
-    <!-- Сюда будет вставлено всё приложение через JavaScript -->
-    <!-- Header, Main, Footer появятся после загрузки main.js -->
 </div>
-
-<!-- Скрипты -->
 <script type="module" src="/src/main.js"></script>
-
-<!-- Резервный скрипт для случаев, если модули не поддерживаются -->
 <script>
     // Проверка поддержки модулей ES6
     if (!('noModule' in HTMLScriptElement.prototype)) {
@@ -175,7 +155,6 @@
             `;
     }
 
-    // Резервная обработка ошибок загрузки
     window.addEventListener('error', function(e) {
         console.error('Ошибка загрузки приложения:', e.error);
         const loading = document.getElementById('loading');
@@ -198,7 +177,6 @@
         }
     });
 
-    // Таймаут загрузки (на всякий случай)
     setTimeout(() => {
         const loading = document.getElementById('loading');
         const mainContent = document.querySelector('.main-content');
@@ -207,16 +185,5 @@
         }
     }, 10000);
 </script>
-
-<!-- Google Analytics / Yandex.Metrika (опционально) -->
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'GA_MEASUREMENT_ID');
-</script>
--->
 </body>
 </html>

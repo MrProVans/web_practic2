@@ -1,6 +1,6 @@
 import './weather.css'
 
-export default function Vanya() {
+export default function Weather() {
     return `
         <section class="weather-page">
             <div class="card">
@@ -36,8 +36,8 @@ export default function Vanya() {
     `
 }
 
-Vanya.init = function() {
-    const apiKey = '89c563ae16caa06090600ce6b5abf65a' // 🔑 вставь свой ключ OpenWeatherMap
+Weather.init = function() {
+    const apiKey = '89c563ae16caa06090600ce6b5abf65a'
 
     const card = document.querySelector('.card')
     const searchBox = document.querySelector('.card_input')

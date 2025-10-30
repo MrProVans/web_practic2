@@ -148,7 +148,7 @@ body {
     }
 }
 
-/* Media query for responsive UI */
+
 @media (max-width: 480px) {
     .card {
         flex-basis: 100%;
