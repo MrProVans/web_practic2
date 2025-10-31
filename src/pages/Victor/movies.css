@@ -1,0 +1,268 @@
+/* movies.css */
+.movies-page {
+    min-height: 80vh;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.movies-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.search-card {
+    width: 100%;
+    max-width: none;
+}
+
+.movie-card {
+    width: 100%;
+    max-width: none;
+}
+
+/* Стили для дефолтного состояния и состояния ошибки */
+.default-state, .error-state {
+    width: 100%;
+    max-width: none;
+}
+
+.movie-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.movie-poster-section {
+    flex: 0 0 auto;
+}
+
+.movie-info-section {
+    flex: 1;
+    min-width: 0;
+}
+
+.movie-poster {
+    width: 100%;
+    max-width: 300px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.movie-poster:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-hover);
+}
+
+.movie-badge {
+    background: var(--surface-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.movie-badge.rating {
+    background: var(--success-color);
+    color: white;
+    border-color: var(--success-color);
+}
+
+.movie-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #FFFFFF;
+    width: 100%;
+}
+
+.detail-item strong {
+    color: #FFFFFF;
+    min-width: 120px;
+    font-weight: 600;
+}
+
+.detail-item span {
+    color: #FFFFFF;
+    text-align: right;
+    flex: 1;
+}
+
+.movie-plot {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.movie-plot h4 {
+    margin-bottom: 0.5rem;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.movie-plot p {
+    line-height: 1.6;
+    color: #FFFFFF;
+}
+
+/* Исправления для блока поиска */
+.search-container {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 0;
+}
+
+.search-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.movie-header {
+    margin-bottom: 1rem;
+}
+
+.movie-title {
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    word-wrap: break-word;
+}
+
+.movie-badges {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+#search-movie:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+#movies-results {
+    width: 100%;
+}
+
+#movies-results .card {
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .movie-content {
+        gap: 1.5rem;
+    }
+    
+    .movie-poster {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .movies-wrapper {
+        padding: 0 1rem;
+    }
+    
+    .movie-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .movie-poster-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .movie-poster {
+        max-width: 250px;
+    }
+    
+    .detail-item {
+        flex-direction: column;
+        gap: 0.25rem;
+        text-align: center;
+    }
+    
+    .detail-item span {
+        text-align: center;
+    }
+    
+    .movie-badge {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    .search-container .btn {
+        width: 100%;
+    }
+    
+    .movie-title {
+        font-size: 1.5rem;
+    }
+    
+    .movie-badges {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .movies-page {
+        padding: 1rem 0;
+    }
+    
+    .movie-poster {
+        max-width: 200px;
+    }
+    
+    .movie-title {
+        font-size: 1.3rem;
+    }
+    
+    .movies-wrapper {
+        padding: 0 0.5rem;
+    }
+}
+
+/* Для очень больших экранов */
+@media (min-width: 1440px) {
+    .movies-wrapper {
+        max-width: 1400px;
+    }
+    
+    .movie-poster {
+        max-width: 350px;
+    }
+}

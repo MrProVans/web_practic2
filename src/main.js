@@ -7,8 +7,8 @@ import Home from './pages/home/Home.js'
 let Weather, Movies, Currency
 
 try { Weather = (await import('./pages/Vanya/weather.js')).default } catch (e) { Weather = null }
-try { Movies = (await import('./pages/Victor/Victor.js')).default } catch (e) { Movies = null }
-try { Currency = (await import('./pages/Dmitriy/Dmitriy.js')).default } catch (e) { Currency = null }
+try { Movies = (await import('./pages/Victor/movies.js')).default } catch (e) { Movies = null }
+try { Currency = (await import('./pages/Dmitriy/currency.js')).default } catch (e) { Currency = null }
 
 class App {
     constructor() {
