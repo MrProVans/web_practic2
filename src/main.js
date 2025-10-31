@@ -1,11 +1,9 @@
 import './style.css'
 
-// Компоненты
 import Header from './components/Header.js'
 import Footer from './components/Footer.js'
 import Home from './pages/home/Home.js'
 
-// Попробуем подключить остальные страницы безопасно
 let Weather, Movies, Currency
 
 try { Weather = (await import('./pages/Vanya/weather.js')).default } catch (e) { Weather = null }
@@ -110,18 +108,15 @@ class App {
     }
 }
 
-// Инициализация приложения
 new App()
 
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
 
-// Загружаем сохранённую тему
 const saved = localStorage.getItem('theme') || 'light';
 html.setAttribute('data-theme', saved);
 updateIcon(saved);
 
-// Переключение темы
 themeToggle.addEventListener('click', () => {
     const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
@@ -129,7 +124,6 @@ themeToggle.addEventListener('click', () => {
     updateIcon(next);
 });
 
-// Обновление иконки
 function updateIcon(theme) {
     const icon = themeToggle.querySelector('.icon');
     if (icon) {

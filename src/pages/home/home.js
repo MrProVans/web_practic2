@@ -52,6 +52,7 @@ const Home = () => {
               <ul class="feature-list">
                 <li>Поиск по городу</li>
                 <li>Детальная информация</li>
+                <li>Прогноз погоды на 5 дней</li>
               </ul>
             </div>
             <div class="feature-card" data-page="movies">

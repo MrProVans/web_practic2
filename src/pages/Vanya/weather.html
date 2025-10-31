@@ -6,37 +6,48 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="weather.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <script src="Weather" defer></script>
 </head>
 <body>
-<div class="card">
-    <h1 class="card_title">Weather App</h1>
-    <p class="card_date">Today, <span id="date"></span></p>
-    <div class="card_search">
-        <input type="text" class="card_input" placeholder="Enter city name"/>
-        <button id="searchBtn" class="card_btn">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-    </div>
-    <div class="card_weather">
-        <h2 class="card_title card_title--city" id="city">New York</h2>
-        <div class="card_block">
-            <h3 class="card_title card_title--temp">22°C</h3>
-            <img src="" class="card_weather-icon" alt="Weather Icon">
+<section class="weather-page">
+    <div class="weather-widgets">
+        <div class="card">
+            <h1 class="card_title">Weather App</h1>
+            <p class="card_date">Today, <span id="date"></span></p>
+            <div class="card_search">
+                <input type="text" class="card_input" placeholder="Enter city name" />
+                <button id="searchBtn" class="card_btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="card_weather">
+                <h2 class="card_title card_title--city" id="city">New York</h2>
+                <div class="card_block">
+                    <h3 class="card_title card_title--temp">22°C</h3>
+                    <img src="" class="card_weather-icon" alt="Weather Icon">
+                </div>
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fa-solid fa-droplet"></i>
+                        <span id="humidity">50%</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-wind"></i>
+                        <span id="wind">15 m/s</span>
+                    </div>
+                </div>
+            </div>
+            <p id="error-message" class="error-message" style="display: none;">Не смогли найти этот город</p>
+        </div>
+        <div class="forecast-card" id="forecast-card">
+            <h1 class="forecast-title">5-Day Forecast</h1>
+            <div class="forecast-container" id="forecast"></div>
         </div>
     </div>
-    <div class="card_details">
-        <div class="card_col">
-            <i class="fa-solid fa-wind card_col-info"></i>
-            <p>Wind</p>
-            <p id="wind" class="card_info">15 m/s</p>
-        </div>
-        <div class="card_col">
-            <i class="fa-solid fa-droplet card_col-info"></i>
-            <p>Hum</p>
-            <p id="humidity" class="card_info">50 %</p>
-        </div>
-    </div>
-</div>
+</section>
+
+<script type="module">
+    import Weather from './weather.js';
+    document.addEventListener('DOMContentLoaded', Weather.init);
+</script>
 </body>
 </html>
