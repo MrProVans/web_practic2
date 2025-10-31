@@ -84,21 +84,27 @@ const Home = () => {
           <div class="team-grid">
             <div class="team-card">
               <div class="team-avatar">В</div>
-              <h3>Ваня</h3>
+              <h3>Ваня Павлов</h3>
               <p class="team-role">Frontend Developer</p>
-              <p class="team-bio">Разработчик виджета погоды. Ответственный за API интеграцию и UX.</p>
+              <p class="team-bio">Разработчик виджета погоды и домашней страницы.</p>
             </div>
             <div class="team-card">
               <div class="team-avatar">В</div>
-              <h3>Витя</h3>
+              <h3>Витя Смыков</h3>
               <p class="team-role">Frontend Developer</p>
-              <p class="team-bio">Создатель библиотеки фильмов. Специалист по работе с TMDB API.</p>
+              <p class="team-bio">Создатель библиотеки фильмов.</p>
             </div>
             <div class="team-card">
               <div class="team-avatar">Д</div>
-              <h3>Дима</h3>
+              <h3>Дима Яновский</h3>
               <p class="team-role">Frontend Developer</p>
-              <p class="team-bio">Разработчик конвертера валют. Эксперт по финансовым API.</p>
+              <p class="team-bio">Разработчик конвертера валют.</p>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar">В</div>
+              <h3>Ваня Клочков</h3>
+              <p class="team-role">Frontend Developer</p>
+              <p class="team-bio">Разработчик домашней страницы. Ответственный за организацию команды.</p>
             </div>
           </div>
         </section>
