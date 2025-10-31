@@ -7,32 +7,24 @@
     <meta name="description" content="DevStars Web App - инновационные веб-виджеты: погода, фильмы, конвертер валют" />
     <meta name="keywords" content="погода, фильмы, валюты, конвертер, API, JavaScript, Vite" />
     <meta name="author" content="Команда DevStars" />
-
-    <!-- Open Graph метатеги для соцсетей -->
     <meta property="og:title" content="DevStars Web App" />
     <meta property="og:description" content="Инновационные веб-виджеты: погода, фильмы, конвертер валют" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mrprovans.github.io/web_practic2" />
 
     <title>DevStars Web App | Погода, Фильмы, Валюты</title>
+
+    <link rel="preload" as="script" href="./assets/main-Cvu6cBB5.js" />
 
-    <!-- Предзагрузка критичных ресурсов -->
-    <link rel="preload" as="script" href="data:text/javascript;base64,aW1wb3J0ICcuL3N0eWxlLmNzcycNCg0KLy8g0JrQvtC80L/QvtC90LXQvdGC0YsNCmltcG9ydCBIZWFkZXIgZnJvbSAnLi9jb21wb25lbnRzL0hlYWRlci5qcycNCmltcG9ydCBGb290ZXIgZnJvbSAnLi9jb21wb25lbnRzL0Zvb3Rlci5qcycNCmltcG9ydCBIb21lIGZyb20gJy4vcGFnZXMvaG9tZS9Ib21lLmpzJw0KDQovLyDQn9C+0L/RgNC+0LHRg9C10Lwg0L/QvtC00LrQu9GO0YfQuNGC0Ywg0L7RgdGC0LDQu9GM0L3Ri9C1INGB0YLRgNCw0L3QuNGG0Ysg0LHQtdC30L7Qv9Cw0YHQvdC+DQpsZXQgV2VhdGhlciwgTW92aWVzLCBDdXJyZW5jeQ0KDQp0cnkgeyBXZWF0aGVyID0gKGF3YWl0IGltcG9ydCgnLi9wYWdlcy9WYW55YS9WYW55YS5qcycpKS5kZWZhdWx0IH0gY2F0Y2ggKGUpIHsgV2VhdGhlciA9IG51bGwgfQ0KdHJ5IHsgTW92aWVzID0gKGF3YWl0IGltcG9ydCgnLi9wYWdlcy9WaWN0b3IvVmljdG9yLmpzJykpLmRlZmF1bHQgfSBjYXRjaCAoZSkgeyBNb3ZpZXMgPSBudWxsIH0NCnRyeSB7IEN1cnJlbmN5ID0gKGF3YWl0IGltcG9ydCgnLi9wYWdlcy9EbWl0cml5L0RtaXRyaXkuanMnKSkuZGVmYXVsdCB9IGNhdGNoIChlKSB7IEN1cnJlbmN5ID0gbnVsbCB9DQoNCmNsYXNzIEFwcCB7DQogICAgY29uc3RydWN0b3IoKSB7DQogICAgICAgIHRoaXMuYXBwID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2FwcCcpDQogICAgICAgIHRoaXMuY3VycmVudFBhZ2UgPSAnaG9tZScNCiAgICAgICAgdGhpcy5wYWdlcyA9IHsNCiAgICAgICAgICAgIGhvbWU6IEhvbWUsDQogICAgICAgICAgICB3ZWF0aGVyOiBXZWF0aGVyLA0KICAgICAgICAgICAgbW92aWVzOiBNb3ZpZXMsDQogICAgICAgICAgICBjdXJyZW5jeTogQ3VycmVuY3kNCiAgICAgICAgfQ0KDQogICAgICAgIHRoaXMuaW5pdCgpDQogICAgfQ0KDQogICAgaW5pdCgpIHsNCiAgICAgICAgdGhpcy5oaWRlTG9hZGluZygpDQogICAgICAgIHRoaXMucmVuZGVyKCkNCiAgICAgICAgdGhpcy5zZXR1cE5hdmlnYXRpb24oKQ0KICAgIH0NCg0KICAgIGhpZGVMb2FkaW5nKCkgew0KICAgICAgICBjb25zdCBsb2FkaW5nID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2xvYWRpbmcnKQ0KICAgICAgICBpZiAobG9hZGluZykgbG9hZGluZy5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnDQogICAgfQ0KDQogICAgcmVuZGVyKCkgew0KICAgICAgICB0aGlzLmFwcC5pbm5lckhUTUwgPSBgDQogICAgICAgICAgICAke0hlYWRlcigpfQ0KICAgICAgICAgICAgPG1haW4gY2xhc3M9Im1haW4tY29udGVudCBsb2FkZWQiPg0KICAgICAgICAgICAgICAgIDxkaXYgaWQ9InBhZ2UtY29udGVudCI+PC9kaXY+DQogICAgICAgICAgICA8L21haW4+DQogICAgICAgICAgICAke0Zvb3RlcigpfQ0KICAgICAgICBgDQogICAgICAgIHRoaXMucmVuZGVyUGFnZSgnaG9tZScpDQogICAgfQ0KDQogICAgcmVuZGVyUGFnZShwYWdlTmFtZSkgew0KICAgICAgICBjb25zdCBwYWdlQ29udGVudCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdwYWdlLWNvbnRlbnQnKQ0KDQogICAgICAgIC8vINCf0YDQvtCy0LXRgNGP0LXQvCwg0YHRg9GJ0LXRgdGC0LLRg9C10YIg0LvQuCDRgdGC0YDQsNC90LjRhtCwDQogICAgICAgIGNvbnN0IHBhZ2VNb2R1bGUgPSB0aGlzLnBhZ2VzW3BhZ2VOYW1lXQ0KDQogICAgICAgIGlmIChwYWdlTW9kdWxlICYmIHR5cGVvZiBwYWdlTW9kdWxlID09PSAnZnVuY3Rpb24nKSB7DQogICAgICAgICAgICBwYWdlQ29udGVudC5pbm5lckhUTUwgPSBwYWdlTW9kdWxlKCkNCiAgICAgICAgICAgIHRoaXMuY3VycmVudFBhZ2UgPSBwYWdlTmFtZQ0KICAgICAgICAgICAgdGhpcy51cGRhdGVBY3RpdmVOYXYoKQ0KICAgICAgICAgICAgdGhpcy5hdHRhY2hQYWdlRXZlbnRzKHBhZ2VOYW1lKQ0KICAgICAgICB9IGVsc2Ugew0KICAgICAgICAgICAgLy8g0JXRgdC70Lgg0YHRgtGA0LDQvdC40YbQsCDQvdC1INGA0LXQsNC70LjQt9C+0LLQsNC90LAg4oCUINGB0L7QvtCx0YnQtdC90LjQtQ0KICAgICAgICAgICAgcGFnZUNvbnRlbnQuaW5uZXJIVE1MID0gYA0KICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9InRleHQtYWxpZ246Y2VudGVyOyBwYWRkaW5nOjRyZW0gMXJlbTsiPg0KICAgICAgICAgICAgICAgICAgICA8aDIgc3R5bGU9ImZvbnQtc2l6ZToycmVtOyBjb2xvcjojZTc0YzNjOyI+8J+YlSDQo9C/0YEhPC9oMj4NCiAgICAgICAgICAgICAgICAgICAgPHAgc3R5bGU9Im1hcmdpbi10b3A6MXJlbTsgZm9udC1zaXplOjEuMnJlbTsiPg0KICAgICAgICAgICAgICAgICAgICAgICAg0KHRgtGA0LDQvdC40YbQsCAiPHN0cm9uZz4ke3BhZ2VOYW1lfTwvc3Ryb25nPiIg0L/QvtC60LAg0L3QtSDRgNCw0LHQvtGC0LDQtdGCLg0KICAgICAgICAgICAgICAgICAgICA8L3A+DQogICAgICAgICAgICAgICAgICAgIDxidXR0b24gaWQ9ImJhY2tIb21lIiBzdHlsZT0iDQogICAgICAgICAgICAgICAgICAgICAgICBtYXJnaW4tdG9wOjJyZW07DQogICAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOjAuNzVyZW0gMS41cmVtOw0KICAgICAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZDojMzQ5OGRiOw0KICAgICAgICAgICAgICAgICAgICAgICAgY29sb3I6d2hpdGU7DQogICAgICAgICAgICAgICAgICAgICAgICBib3JkZXI6bm9uZTsNCiAgICAgICAgICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6NnB4Ow0KICAgICAgICAgICAgICAgICAgICAgICAgY3Vyc29yOnBvaW50ZXI7DQogICAgICAgICAgICAgICAgICAgICI+0JLQtdGA0L3Rg9GC0YzRgdGPINC90LAg0LPQu9Cw0LLQvdGD0Y48L2J1dHRvbj4NCiAgICAgICAgICAgICAgICA8L2Rpdj4NCiAgICAgICAgICAgIGANCiAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdiYWNrSG9tZScpPy5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsICgpID0+IHRoaXMucmVuZGVyUGFnZSgnaG9tZScpKQ0KICAgICAgICB9DQogICAgfQ0KDQogICAgdXBkYXRlQWN0aXZlTmF2KCkgew0KICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCcubmF2LWxpbmsnKS5mb3JFYWNoKGxpbmsgPT4gew0KICAgICAgICAgICAgbGluay5jbGFzc0xpc3QucmVtb3ZlKCdhY3RpdmUnKQ0KICAgICAgICB9KQ0KICAgICAgICBjb25zdCBjdXJyZW50TGluayA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYFtkYXRhLXBhZ2U9IiR7dGhpcy5jdXJyZW50UGFnZX0iXWApDQogICAgICAgIGlmIChjdXJyZW50TGluaykgY3VycmVudExpbmsuY2xhc3NMaXN0LmFkZCgnYWN0aXZlJykNCiAgICB9DQoNCiAgICBzZXR1cE5hdmlnYXRpb24oKSB7DQogICAgICAgIGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgKGUpID0+IHsNCiAgICAgICAgICAgIGNvbnN0IHRhcmdldCA9IGUudGFyZ2V0LmNsb3Nlc3QoJy5uYXYtbGluaywgW2RhdGEtcGFnZV0nKQ0KICAgICAgICAgICAgaWYgKHRhcmdldCkgew0KICAgICAgICAgICAgICAgIGUucHJldmVudERlZmF1bHQoKQ0KICAgICAgICAgICAgICAgIGNvbnN0IHBhZ2UgPSB0YXJnZXQuZ2V0QXR0cmlidXRlKCdkYXRhLXBhZ2UnKQ0KICAgICAgICAgICAgICAgIGlmIChwYWdlKSB7DQogICAgICAgICAgICAgICAgICAgIHRoaXMucmVuZGVyUGFnZShwYWdlKQ0KICAgICAgICAgICAgICAgICAgICB3aW5kb3cuc2Nyb2xsVG8oMCwgMCkNCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICB9DQogICAgICAgIH0pDQogICAgfQ0KDQogICAgYXR0YWNoUGFnZUV2ZW50cyhwYWdlTmFtZSkgew0KICAgICAgICBjb25zdCBwYWdlTW9kdWxlID0gdGhpcy5wYWdlc1twYWdlTmFtZV0NCiAgICAgICAgaWYgKHBhZ2VNb2R1bGUgJiYgdHlwZW9mIHBhZ2VNb2R1bGUuaW5pdCA9PT0gJ2Z1bmN0aW9uJykgew0KICAgICAgICAgICAgcGFnZU1vZHVsZS5pbml0KCkNCiAgICAgICAgfQ0KICAgIH0NCn0NCg0KLy8g0JjQvdC40YbQuNCw0LvQuNC30LDRhtC40Y8g0L/RgNC40LvQvtC20LXQvdC40Y8NCm5ldyBBcHAoKQ0K" />
-
-    <!-- Темная тема для браузера -->
     <meta name="color-scheme" content="light dark">
 
-    <!-- PWA манифест (опционально) -->
     <link rel="manifest" href="./manifest.json" />
 
-    <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <!-- Канонический URL -->
     <link rel="canonical" href="https://mrprovans.github.io/web_practic2" />
 
     <style>
-        /* Критический CSS для мгновенной отрисовки */
         * {
             margin: 0;
             padding: 0;
@@ -47,7 +39,6 @@
             min-height: 100vh;
         }
 
-        /* Стили для загрузочного экрана */
         #app {
             min-height: 100vh;
             display: flex;
@@ -89,7 +80,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Темная тема для системных предпочтений */
         @media (prefers-color-scheme: dark) {
             body {
                 background-color: #1a1a1a;
@@ -110,7 +100,6 @@
             }
         }
 
-        /* Улучшение доступности для пользователей с reduced motion */
         @media (prefers-reduced-motion: reduce) {
             .spinner {
                 animation: none;
@@ -124,7 +113,6 @@
             }
         }
 
-        /* Базовые стили для контента, который появится после загрузки JS */
         .main-content {
             flex: 1;
             opacity: 0;
@@ -135,12 +123,11 @@
             opacity: 1;
         }
     </style>
-  <script type="module" crossorigin src="./assets/index-BKyJn-4y.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CrWLTjVn.css">
+  <script type="module" crossorigin src="./assets/index-DB6z3P8_.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DYz81GIz.css">
 </head>
 <body>
 <div id="app">
-    <!-- Экран загрузки, который исчезнет после инициализации JS -->
     <div class="loading" id="loading">
         <div class="spinner" aria-hidden="true"></div>
         <p>Загрузка DevStars App...</p>
@@ -150,14 +137,7 @@
             </p>
         </noscript>
     </div>
-
-    <!-- Сюда будет вставлено всё приложение через JavaScript -->
-    <!-- Header, Main, Footer появятся после загрузки main.js -->
-</div>
-
-<!-- Скрипты -->
-
-<!-- Резервный скрипт для случаев, если модули не поддерживаются -->
+</div>
 <script>
     // Проверка поддержки модулей ES6
     if (!('noModule' in HTMLScriptElement.prototype)) {
@@ -175,7 +155,6 @@
             `;
     }
 
-    // Резервная обработка ошибок загрузки
     window.addEventListener('error', function(e) {
         console.error('Ошибка загрузки приложения:', e.error);
         const loading = document.getElementById('loading');
@@ -198,7 +177,6 @@
         }
     });
 
-    // Таймаут загрузки (на всякий случай)
     setTimeout(() => {
         const loading = document.getElementById('loading');
         const mainContent = document.querySelector('.main-content');
@@ -207,16 +185,5 @@
         }
     }, 10000);
 </script>
-
-<!-- Google Analytics / Yandex.Metrika (опционально) -->
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'GA_MEASUREMENT_ID');
-</script>
--->
 </body>
 </html>

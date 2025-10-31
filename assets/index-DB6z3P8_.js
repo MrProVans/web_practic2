@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./Vanya-BctALYkb.js","./Vanya-Bjcj1u9G.css"])))=>i.map(i=>d[i]);
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))i(t);new MutationObserver(t=>{for(const n of t)if(n.type==="childList")for(const r of n.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&i(r)}).observe(document,{childList:!0,subtree:!0});function a(t){const n={};return t.integrity&&(n.integrity=t.integrity),t.referrerPolicy&&(n.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?n.credentials="include":t.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function i(t){if(t.ep)return;t.ep=!0;const n=a(t);fetch(t.href,n)}})();const E="modulepreload",w=function(s,e){return new URL(s,e).href},y={},g=function(e,a,i){let t=Promise.resolve();if(a&&a.length>0){let P=function(o){return Promise.all(o.map(d=>Promise.resolve(d).then(u=>({status:"fulfilled",value:u}),u=>({status:"rejected",reason:u}))))};const r=document.getElementsByTagName("link"),c=document.querySelector("meta[property=csp-nonce]"),b=c?.nonce||c?.getAttribute("nonce");t=P(a.map(o=>{if(o=w(o,i),o in y)return;y[o]=!0;const d=o.endsWith(".css"),u=d?'[rel="stylesheet"]':"";if(i)for(let v=r.length-1;v>=0;v--){const p=r[v];if(p.href===o&&(!d||p.rel==="stylesheet"))return}else if(document.querySelector(`link[href="${o}"]${u}`))return;const l=document.createElement("link");if(l.rel=d?"stylesheet":E,d||(l.as="script"),l.crossOrigin="",l.href=o,b&&l.setAttribute("nonce",b),document.head.appendChild(l),d)return new Promise((v,p)=>{l.addEventListener("load",v),l.addEventListener("error",()=>p(new Error(`Unable to preload CSS for ${o}`)))})}))}function n(r){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=r,window.dispatchEvent(c),!c.defaultPrevented)throw r}return t.then(r=>{for(const c of r||[])c.status==="rejected"&&n(c.reason);return e().catch(n)})},L=()=>`
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./weather-BO1LrArt.js","./weather-DfIUdZLd.css","./movies-Du1PJPM6.js","./movies-CYRgnBZM.css"])))=>i.map(i=>d[i]);
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))i(a);new MutationObserver(a=>{for(const n of a)if(n.type==="childList")for(const r of n.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&i(r)}).observe(document,{childList:!0,subtree:!0});function s(a){const n={};return a.integrity&&(n.integrity=a.integrity),a.referrerPolicy&&(n.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?n.credentials="include":a.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function i(a){if(a.ep)return;a.ep=!0;const n=s(a);fetch(a.href,n)}})();const S="modulepreload",A=function(t,e){return new URL(t,e).href},_={},b=function(e,s,i){let a=Promise.resolve();if(s&&s.length>0){let k=function(o){return Promise.all(o.map(d=>Promise.resolve(d).then(u=>({status:"fulfilled",value:u}),u=>({status:"rejected",reason:u}))))};const r=document.getElementsByTagName("link"),c=document.querySelector("meta[property=csp-nonce]"),y=c?.nonce||c?.getAttribute("nonce");a=k(s.map(o=>{if(o=A(o,i),o in _)return;_[o]=!0;const d=o.endsWith(".css"),u=d?'[rel="stylesheet"]':"";if(i)for(let v=r.length-1;v>=0;v--){const p=r[v];if(p.href===o&&(!d||p.rel==="stylesheet"))return}else if(document.querySelector(`link[href="${o}"]${u}`))return;const l=document.createElement("link");if(l.rel=d?"stylesheet":S,d||(l.as="script"),l.crossOrigin="",l.href=o,y&&l.setAttribute("nonce",y),document.head.appendChild(l),d)return new Promise((v,p)=>{l.addEventListener("load",v),l.addEventListener("error",()=>p(new Error(`Unable to preload CSS for ${o}`)))})}))}function n(r){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=r,window.dispatchEvent(c),!c.defaultPrevented)throw r}return a.then(r=>{for(const c of r||[])c.status==="rejected"&&n(c.reason);return e().catch(n)})},I=()=>`
     <header class="header">
       <div class="container">
         <div class="header-content">
@@ -18,7 +18,7 @@ const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./Vanya-BctALYkb.js","
         </div>
       </div>
     </header>
-  `,S=()=>`
+  `,D=()=>`
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
@@ -34,27 +34,27 @@ const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./Vanya-BctALYkb.js","
           </div>
           <div class="footer-section">
             <h4>Команда</h4>
-            <span>Ваня - Погода</span>
-            <span>Витя - Фильмы</span>
-            <span>Дима - Валюты</span>
+            <span>Ваня Клочков - Домашняя страница</span><br>
+            <span>Ваня Павлов - Погода, домашняя страница</span><br>
+            <span>Витя Смыков - Фильмы</span><br>
+            <span>Дима Яновский - Валюты</span>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2024 DevStars. Все права защищены.</p>
+          <p>&copy; 2025 DevStars. Все права защищены.</p>
         </div>
       </div>
     </footer>
-  `,_=()=>`
+  `,E=()=>`
     <div class="home-page">
       <div class="container">
-        <!-- Hero Section -->
         <section class="hero-section">
           <div class="hero-content">
             <h1 class="hero-title">Добро пожаловать в DevStars Web App</h1>
             <p class="hero-subtitle">Инновационные веб-виджеты для повседневного использования</p>
             <div class="hero-actions">
               <button class="btn btn-outline" data-page="weather">
-                🌤️ Узнать погоду
+                🌤 Узнать погоду
               </button>
               <button class="btn btn-outline" data-page="movies">
                 🎬 Найти фильм
@@ -62,46 +62,43 @@ const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./Vanya-BctALYkb.js","
               <button class="btn btn-outline" data-page="currency">
                 💱 Проверить курс валют
               </button>
+             </div>
             </div>
-          </div>
-          <div class="hero-image">
             <div class="floating-cards">
-              <div class="floating-card weather-card">
-                <div class="card-icon">🌤️</div>
+              <button class="floating-card weather-card" data-page="weather">
+                <div class="card-icon">🌤</div>
                 <h4>Погода</h4>
                 <p>Актуальный прогноз</p>
-              </div>
-              <div class="floating-card movies-card">
+              </button>
+            
+              <button class="floating-card movies-card" data-page="movies">
                 <div class="card-icon">🎬</div>
                 <h4>Фильмы</h4>
                 <p>База данных кино</p>
-              </div>
-              <div class="floating-card currency-card">
-                <div class="card-icon">💱</div>
+              </button>
+            
+              <button class="floating-card currency-card" data-page="currency">
+                <div class="card-icon">💵</div>
                 <h4>Валюты</h4>
                 <p>Конвертер курсов</p>
-              </div>
+              </button>
             </div>
           </div>
+          
         </section>
-
-        <!-- Features Section -->
         <section class="features-section">
           <h2 class="section-title">Наши возможности</h2>
           <div class="features-grid">
             <div class="feature-card" data-page="weather">
-              <div class="feature-icon">🌤️</div>
+              <div class="feature-icon">🌤</div>
               <h3>Виджет погоды</h3>
-<!--              <p>Текущая погода и точный прогноз на 5 дней для любого города мира</p>-->
               <p>Текущая погода, скорость ветра, влажность и температура для любого города мира</p>
               <ul class="feature-list">
                 <li>Поиск по городу</li>
-<!--                <li>Геолокация</li>-->
                 <li>Детальная информация</li>
-<!--                <li>Прогноз на неделю</li>-->
+                <li>Прогноз погоды на 5 дней</li>
               </ul>
             </div>
-
             <div class="feature-card" data-page="movies">
               <div class="feature-icon">🎬</div>
               <h3>Библиотека фильмов</h3>
@@ -113,9 +110,8 @@ const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./Vanya-BctALYkb.js","
                 <li>Детальная информация</li>
               </ul>
             </div>
-
             <div class="feature-card" data-page="currency">
-              <div class="feature-icon">💱</div>
+              <div class="feature-icon">💵</div>
               <h3>Конвертер валют</h3>
               <p>Актуальные курсы валют с конвертацией и историческими данными</p>
               <ul class="feature-list">
@@ -127,35 +123,35 @@ const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./Vanya-BctALYkb.js","
             </div>
           </div>
         </section>
-
-        <!-- Team Section -->
         <section class="team-section">
           <h2 class="section-title">Наша команда</h2>
           <div class="team-grid">
             <div class="team-card">
               <div class="team-avatar">В</div>
-              <h3>Ваня</h3>
+              <h3>Ваня Павлов</h3>
               <p class="team-role">Frontend Developer</p>
-              <p class="team-bio">Разработчик виджета погоды. Ответственный за API интеграцию и UX.</p>
+              <p class="team-bio">Разработчик виджета погоды и домашней страницы.</p>
             </div>
-
             <div class="team-card">
               <div class="team-avatar">В</div>
-              <h3>Витя</h3>
+              <h3>Витя Смыков</h3>
               <p class="team-role">Frontend Developer</p>
-              <p class="team-bio">Создатель библиотеки фильмов. Специалист по работе с TMDB API.</p>
+              <p class="team-bio">Создатель библиотеки фильмов.</p>
             </div>
-
             <div class="team-card">
               <div class="team-avatar">Д</div>
-              <h3>Дима</h3>
+              <h3>Дима Яновский</h3>
               <p class="team-role">Frontend Developer</p>
-              <p class="team-bio">Разработчик конвертера валют. Эксперт по финансовым API.</p>
+              <p class="team-bio">Разработчик конвертера валют.</p>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar">В</div>
+              <h3>Ваня Клочков</h3>
+              <p class="team-role">Frontend Developer</p>
+              <p class="team-bio">Разработчик домашней страницы. Ответственный за организацию команды.</p>
             </div>
           </div>
         </section>
-
-        <!-- Stats Section -->
         <section class="stats-section">
           <div class="stats-grid">
             <div class="stat-card">
@@ -174,13 +170,13 @@ const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./Vanya-BctALYkb.js","
         </section>
       </div>
     </div>
-  `;_.init=()=>{document.addEventListener("click",s=>{const e=s.target.closest(".feature-card, .floating-card");if(e){const a=e.closest("[data-page]")?.getAttribute("data-page");if(a){const i=new Event("click",{bubbles:!0}),t=document.querySelector(`[data-page="${a}"]`);t&&t.dispatchEvent(i)}}})};const k=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),A=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"}));let h,f,m;try{h=(await g(async()=>{const{default:s}=await import("./Vanya-BctALYkb.js");return{default:s}},__vite__mapDeps([0,1]),import.meta.url)).default}catch{h=null}try{f=(await g(async()=>{const{default:s}=await Promise.resolve().then(()=>k);return{default:s}},void 0,import.meta.url)).default}catch{f=null}try{m=(await g(async()=>{const{default:s}=await Promise.resolve().then(()=>A);return{default:s}},void 0,import.meta.url)).default}catch{m=null}class O{constructor(){this.app=document.getElementById("app"),this.currentPage="home",this.pages={home:_,weather:h,movies:f,currency:m},this.init()}init(){this.hideLoading(),this.render(),this.setupNavigation()}hideLoading(){const e=document.getElementById("loading");e&&(e.style.display="none")}render(){this.app.innerHTML=`
-            ${L()}
+  `;E.init=()=>{document.addEventListener("click",t=>{const e=t.target.closest(".feature-card, .floating-card");if(e){const s=e.closest("[data-page]")?.getAttribute("data-page");if(s){const i=new Event("click",{bubbles:!0}),a=document.querySelector(`.nav-link[data-page="${s}"]`);a&&a.dispatchEvent(i)}}})};const O=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"}));let h,m,f;try{h=(await b(async()=>{const{default:t}=await import("./weather-BO1LrArt.js");return{default:t}},__vite__mapDeps([0,1]),import.meta.url)).default}catch{h=null}try{m=(await b(async()=>{const{default:t}=await import("./movies-Du1PJPM6.js");return{default:t}},__vite__mapDeps([2,3]),import.meta.url)).default}catch{m=null}try{f=(await b(async()=>{const{default:t}=await Promise.resolve().then(()=>O);return{default:t}},void 0,import.meta.url)).default}catch{f=null}class T{constructor(){this.app=document.getElementById("app"),this.currentPage="home",this.pages={home:E,weather:h,movies:m,currency:f},this.init()}init(){this.hideLoading(),this.render(),this.setupNavigation()}hideLoading(){const e=document.getElementById("loading");e&&(e.style.display="none")}render(){this.app.innerHTML=`
+            ${I()}
             <main class="main-content loaded">
                 <div id="page-content"></div>
             </main>
-            ${S()}
-        `,this.renderPage("home")}renderPage(e){const a=document.getElementById("page-content"),i=this.pages[e];i&&typeof i=="function"?(a.innerHTML=i(),this.currentPage=e,this.updateActiveNav(),this.attachPageEvents(e)):(a.innerHTML=`
+            ${D()}
+        `,this.renderPage("home")}renderPage(e){const s=document.getElementById("page-content"),i=this.pages[e];i&&typeof i=="function"?(s.innerHTML=i(),this.currentPage=e,this.updateActiveNav(),this.attachPageEvents(e)):(s.innerHTML=`
                 <div style="text-align:center; padding:4rem 1rem;">
                     <h2 style="font-size:2rem; color:#e74c3c;">😕 Упс!</h2>
                     <p style="margin-top:1rem; font-size:1.2rem;">
@@ -196,5 +192,5 @@ const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./Vanya-BctALYkb.js","
                         cursor:pointer;
                     ">Вернуться на главную</button>
                 </div>
-            `,document.getElementById("backHome")?.addEventListener("click",()=>this.renderPage("home")))}updateActiveNav(){document.querySelectorAll(".nav-link").forEach(a=>{a.classList.remove("active")});const e=document.querySelector(`[data-page="${this.currentPage}"]`);e&&e.classList.add("active")}setupNavigation(){document.addEventListener("click",e=>{const a=e.target.closest(".nav-link, [data-page]");if(a){e.preventDefault();const i=a.getAttribute("data-page");i&&(this.renderPage(i),window.scrollTo(0,0))}})}attachPageEvents(e){const a=this.pages[e];a&&typeof a.init=="function"&&a.init()}}new O;
-//# sourceMappingURL=index-BKyJn-4y.js.map
+            `,document.getElementById("backHome")?.addEventListener("click",()=>this.renderPage("home")))}updateActiveNav(){document.querySelectorAll(".nav-link").forEach(s=>{s.classList.remove("active")});const e=document.querySelector(`[data-page="${this.currentPage}"]`);e&&e.classList.add("active")}setupNavigation(){document.addEventListener("click",e=>{const s=e.target.closest(".nav-link, [data-page]");if(s){e.preventDefault();const i=s.getAttribute("data-page");i&&(this.renderPage(i),window.scrollTo(0,0))}})}attachPageEvents(e){const s=this.pages[e];s&&typeof s.init=="function"&&s.init()}}new T;const w=document.getElementById("themeToggle"),g=document.documentElement,P=localStorage.getItem("theme")||"light";g.setAttribute("data-theme",P);L(P);w.addEventListener("click",()=>{const t=g.getAttribute("data-theme")==="dark"?"light":"dark";g.setAttribute("data-theme",t),localStorage.setItem("theme",t),L(t)});function L(t){const e=w.querySelector(".icon");e&&(e.textContent=t==="dark"?"Солнце":"Луна")}
+//# sourceMappingURL=index-DB6z3P8_.js.map
