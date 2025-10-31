@@ -1,6 +1,3 @@
-## currency.css
-
-```css
 .currency-page {
     min-height: 100vh;
     padding: 2rem 1rem;
@@ -313,4 +310,28 @@ h3 {
     
     .card {
         padding: 1.5rem;
-        border
+        border-radius: 18px;
+    }
+    
+    .form-input,
+    .form-select {
+        padding: 1rem 1.2rem;
+        font-size: 1rem;
+    }
+    
+    .popular-rates-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .conversion-main h2 {
+        font-size: 1.6rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+}
