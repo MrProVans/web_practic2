@@ -16,7 +16,7 @@ button {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background: #fff;
     font-family: "Poppins", serif;
     flex-direction: column;
@@ -43,7 +43,7 @@ button {
     background: linear-gradient(180deg, #62b8f6 0%, #2c79c1 100%);
     color: #fff;
     border-radius: 20px;
-    padding: 40px 20px;
+    padding: 28px 16px;
     text-align: center;
     transition: transform 0.8s ease;
     position: relative;
@@ -158,15 +158,18 @@ button {
 .weather-details {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    margin-top: 1rem;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .detail-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 2px;
     font-size: 18px;
+    min-width: 90px;
 }
 
 .detail-item i {
@@ -223,7 +226,7 @@ button {
 }
 
 [data-theme="dark"] .weather-page {
-    background: #000000;
+    background: #1a1a1a;
 }
 
 [data-theme="dark"] .card,
@@ -306,14 +309,25 @@ button {
     }
 
     .weather-details {
-        gap: 1rem;
+        gap: 2rem;
+        margin-top: 1rem;
     }
 
     .detail-item {
+        gap: 4px;
         font-size: 16px;
     }
 
     .detail-item i {
-        font-size: 18px;
+        font-size: 22px;
+    }
+
+    .detail-item strong {
+        font-size: 14px;
+    }
+
+    .detail-item #humidity,
+    .detail-item #wind {
+        font-size: 17px;
     }
 }

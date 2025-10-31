@@ -2,42 +2,42 @@ import './weather.css'
 
 export default function Weather() {
     return `
-        <section class="weather-page">
-            <div class="weather-widgets">
-                <div class="card">
-                    <h1 class="card_title">Weather App</h1>
-                    <p class="card_date">Today, <span id="date"></span></p>
-                    <div class="card_search">
-                        <input type="text" class="card_input" placeholder="Enter city name" />
-                        <button id="searchBtn" class="card_btn">
-                            <span class="theme-icon">🔍</span>
-                        </button>
-                    </div>
-                    <div class="card_weather">
-                        <h2 class="card_title card_title--city" id="city">New York</h2>
-                        <div class="card_block">
-                            <h3 class="card_title card_title--temp">22°C</h3>
-                            <img src="" class="card_weather-icon" alt="Weather Icon">
+            <section class="weather-page">
+                <div class="weather-widgets">
+                    <div class="card">
+                        <h1 class="card_title">Weather App</h1>
+                        <p class="card_date">Today, <span id="date"></span></p>
+                        <div class="card_search">
+                            <input type="text" class="card_input" placeholder="Enter city name" />
+                            <button id="searchBtn" class="card_btn">
+                                <span class="theme-icon">🔍</span>
+                            </button>
                         </div>
-                        <div class="weather-details">
-                            <div class="detail-item">
-                                <i class="fa-solid fa-droplet"></i>
-                                <span id="humidity">50%</span>
+                        <div class="card_weather">
+                            <h2 class="card_title card_title--city" id="city">New York</h2>
+                            <div class="card_block">
+                                <h3 class="card_title card_title--temp">22°C</h3>
+                                <img src="" class="card_weather-icon" alt="Weather Icon">
                             </div>
-                            <div class="detail-item">
-                                <i class="fa-solid fa-wind"></i>
-                                <span id="wind">15 m/s</span>
+                            <div class="weather-details">
+                                <div class="detail-item">
+                                    <i class="fa-solid fa-droplet"></i>
+                                    <span><strong>Влажность:</strong> <span id="humidity">50%</span></span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fa-solid fa-wind"></i>
+                                    <span><strong>Скорость ветра:</strong> <span id="wind">15 m/s</span></span>
+                                </div>
                             </div>
                         </div>
+                        <p id="error-message" class="error-message" style="display: none;">Не смогли найти этот город</p>
                     </div>
-                    <p id="error-message" class="error-message" style="display: none;">Не смогли найти этот город</p>
+                    <div class="forecast-card" id="forecast-card">
+                        <h1 class="forecast-title">5-Day Forecast</h1>
+                        <div class="forecast-container" id="forecast"></div>
+                    </div>
                 </div>
-                <div class="forecast-card" id="forecast-card">
-                    <h1 class="forecast-title">5-Day Forecast</h1>
-                    <div class="forecast-container" id="forecast"></div>
-                </div>
-            </div>
-        </section>
+            </section>
     `
 }
 
@@ -55,13 +55,6 @@ Weather.init = function() {
     const errorMessage = document.getElementById('error-message')
     const humidity = document.getElementById('humidity')
     const wind = document.getElementById('wind')
-    function resetWeatherData() {
-        city.innerHTML = 'New York'
-        temp.innerHTML = '22°C'
-        icon.src = ''
-        humidity.innerHTML = '50%'
-        wind.innerHTML = '15 m/s'
-    }
 
     const showDate = () => {
         const now = new Date()
@@ -104,7 +97,6 @@ Weather.init = function() {
             errorMessage.style.display = 'block'
             card.classList.remove('active')
             card.style.height = '230px'
-            resetWeatherData()
             forecastContainer.innerHTML = ''
             forecastCard.style.display = 'none'
             card.classList.remove('move-left')
