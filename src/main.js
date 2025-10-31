@@ -2,7 +2,7 @@ import './style.css'
 
 import Header from './components/Header.js'
 import Footer from './components/Footer.js'
-import Home from './pages/home/home.js'
+import Home from './pages/home/Home.js'
 
 let Weather, Movies, Currency
 
